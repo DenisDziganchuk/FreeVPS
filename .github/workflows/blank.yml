@@ -15,8 +15,6 @@ jobs:
 #      run: ./not-exist-file.sh it bloke build
     - name: Preparing Linux Environment
       run: sudo apt-get update
-    - name: Updating ngrok
-      run: ngrok update
     - name: Setting Up the Ubuntu Environment
     #  if: ${{ failure() }}
       run: bash linux-ssh.sh
