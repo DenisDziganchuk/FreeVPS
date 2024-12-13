@@ -30,4 +30,10 @@ brew install --cask ngrok
 
 #configure ngrok and start it
 ngrok authtoken $3
-ngrok tcp 5900 --region=ap &
+ngrok tcp 5900 &
+
+echo ""
+echo "=========================================="
+echo "To connect: $(grep -o -E "tcp://(.+)" < .ngrok.log | sed "s/tcp:\/\//ssh $USER@/" | sed "s/:/ -p /")"
+echo "or conenct with $(grep -o -E "tcp://(.+)" < .ngrok.log | sed "s/tcp:\/\//ssh (Your Linux Username)@/" | sed "s/:/ -p /")"
+echo "=========================================="
